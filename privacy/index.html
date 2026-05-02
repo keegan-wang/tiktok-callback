@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — Perfit Video Generator</title>
+  <title>Privacy Policy — Mass Gen</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
@@ -24,121 +24,90 @@
   </style>
 </head>
 <body>
-  <nav><a href="/tiktok-callback/">Home</a><a href="/tiktok-callback/terms/">Terms of Service</a></nav>
+  <nav>
+    <a href="/vive-app/">Home</a>
+    <a href="/vive-app/terms/">Terms of Service</a>
+  </nav>
   <h1>Privacy Policy</h1>
-  <div class="updated">Last updated: April 25, 2026</div>
+  <div class="updated">Last updated: May 2, 2026</div>
 
   <p>
-    This Privacy Policy describes how <strong>Perfit Video Generator</strong>
-    ("the App") handles your information. The App is a desktop application
-    that runs on your own computer. It does not operate a server or cloud
-    backend of its own.
+    This Privacy Policy applies to <strong>Mass Gen</strong> ("the App"), a desktop application
+    developed by Keegan. Mass Gen runs on your own computer and helps you bulk-generate product
+    videos and publish them to TikTok and Instagram. It does not operate a server or cloud backend of its own.
   </p>
 
   <h2>1. Summary</h2>
   <p>
-    Everything the App uses to function is stored locally on your own
-    computer. The App does not collect analytics, does not maintain a user
-    database, and does not transmit your data to any service other than
-    TikTok's own APIs (only when you explicitly ask the App to connect an
-    account or publish a video).
+    Everything Mass Gen uses to function is stored locally on your own computer. The App does not
+    collect analytics, does not maintain a user database, and does not transmit your data to any
+    service other than TikTok's and Instagram's own APIs — and only when you explicitly ask it to
+    connect an account or publish a video.
   </p>
 
   <h2>2. Information the App handles</h2>
-  <p>The App works with the following categories of data:</p>
   <ul>
     <li>
-      <strong>TikTok OAuth tokens.</strong> When you connect a TikTok
-      account, the App receives and stores an access token and a refresh
-      token. These are stored on your own computer in the App's config
-      directory (<code>~/.config/ai-video-editor-smart/tt_accounts/</code>)
+      <strong>TikTok OAuth tokens.</strong> When you connect a TikTok account, Mass Gen receives
+      and stores an access token and refresh token on your computer in the App's config directory
       with owner-only file permissions.
     </li>
     <li>
-      <strong>Your TikTok display name and avatar URL.</strong> Fetched via
-      TikTok's <code>user.info.basic</code> scope after you connect. Used
-      solely to label the connected account in the App's interface so you
-      know which account will receive a published video. Stored locally.
+      <strong>Instagram OAuth tokens.</strong> When you connect an Instagram account, Mass Gen
+      receives and stores an access token on your computer, also with owner-only file permissions.
     </li>
     <li>
-      <strong>Video files and captions that you create.</strong> Stored on
-      your own computer. Sent to TikTok only when you explicitly click Post
-      or Schedule.
+      <strong>Your display name and avatar URL</strong> from TikTok/Instagram. Fetched once after
+      connecting, stored locally, used only to label connected accounts in the App's interface.
     </li>
     <li>
-      <strong>App configuration.</strong> Your preferences, project files,
-      schedule entries, and similar local state. Stored on your own computer.
+      <strong>Video files, product images, and captions that you create.</strong> Stored on your
+      own computer. Sent to TikTok or Instagram only when you explicitly click Post or Schedule.
+    </li>
+    <li>
+      <strong>App configuration and project files.</strong> Preferences, schedule entries, and
+      publishing history. Stored on your own computer.
     </li>
   </ul>
 
   <h2>3. Data sent to third parties</h2>
   <p>
-    The App sends data to TikTok's APIs only when you explicitly take an
-    action that requires it:
+    Mass Gen sends data to TikTok's or Instagram's APIs only when you take an action that requires it:
   </p>
   <ul>
-    <li>
-      <strong>Connecting an account:</strong> the App uses TikTok's OAuth
-      endpoints to exchange an authorization code for an access token and to
-      fetch your display name and avatar URL.
-    </li>
-    <li>
-      <strong>Publishing a video:</strong> the App sends the video file,
-      caption, privacy setting, and interaction-toggle preferences you chose
-      to TikTok's Content Posting API endpoints.
-    </li>
-    <li>
-      <strong>Refreshing tokens:</strong> when an access token nears expiry,
-      the App exchanges the refresh token for a new access token via
-      TikTok's OAuth endpoint.
-    </li>
+    <li><strong>Connecting an account:</strong> OAuth exchange for access token and basic profile info.</li>
+    <li><strong>Publishing a video:</strong> the video file and caption you chose are sent to the platform's Content Posting API.</li>
+    <li><strong>Refreshing tokens:</strong> expired tokens are refreshed via the platform's OAuth endpoint.</li>
   </ul>
   <p>
-    No other third parties receive any of your data. The App has no
-    analytics, no telemetry, no cloud backup, and no remote error reporting.
+    No other third parties receive any of your data. Mass Gen has no analytics, no telemetry, no
+    cloud backup, and no remote error reporting.
   </p>
 
   <h2>4. Your control over your data</h2>
-  <p>
-    All data the App stores is on your own computer. You can:
-  </p>
   <ul>
-    <li>
-      <strong>Delete a connected TikTok account</strong> from the App's
-      Accounts panel, which removes the stored tokens and profile info
-      from your computer.
-    </li>
-    <li>
-      <strong>Revoke the App's TikTok access</strong> at any time via your
-      TikTok account settings at
-      <a href="https://www.tiktok.com/setting/apps-permissions" target="_blank" rel="noreferrer">tiktok.com/setting/apps-permissions</a>.
-    </li>
-    <li>
-      <strong>Delete the App's config directory</strong>
-      (<code>~/.config/ai-video-editor-smart/</code>) to remove all locally
-      stored data.
-    </li>
-    <li>
-      <strong>Uninstall the App.</strong>
-    </li>
+    <li><strong>Delete a connected account</strong> from the App's Accounts panel to remove tokens from your computer.</li>
+    <li><strong>Revoke TikTok access</strong> at any time via <a href="https://www.tiktok.com/setting/apps-permissions" target="_blank" rel="noreferrer">tiktok.com/setting/apps-permissions</a>.</li>
+    <li><strong>Revoke Instagram access</strong> via your Instagram account's connected apps settings.</li>
+    <li><strong>Delete the App's config directory</strong> to remove all locally stored data.</li>
+    <li><strong>Uninstall the App.</strong></li>
   </ul>
 
   <h2>5. Children</h2>
   <p>
-    The App is not directed at children under 13 and should not be used by
-    them.
+    Mass Gen is not directed at children under 13 and should not be used by them.
   </p>
 
   <h2>6. Changes</h2>
   <p>
-    This Privacy Policy may be updated from time to time. The "Last updated"
-    date above reflects the most recent version.
+    This Privacy Policy may be updated from time to time. The "Last updated" date above reflects
+    the most recent version.
   </p>
 
   <h2>7. Contact</h2>
   <p>
-    Questions about this Privacy Policy can be directed to the developer via
-    <a href="https://github.com/keegan-wang/tiktok-callback/issues" target="_blank" rel="noreferrer">the project's GitHub issue tracker</a>.
+    Questions about this Privacy Policy can be directed to
+    <a href="mailto:keegan@treffa.us">keegan@treffa.us</a>.
   </p>
 </body>
 </html>
