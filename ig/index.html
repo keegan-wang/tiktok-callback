@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram OAuth Callback</title>
+</head>
+<body>
+    <h1>Connecting Instagram...</h1>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get('code');
+        const state = params.get('state');
+        const error = params.get('error');
+
+        if (error) {
+            document.body.innerHTML = `<h1>Error: ${error}</h1>`;
+        } else if (code && state) {
+            const parts = state.split(':');
+            const port = parts[1] || '8191';
+            const callbackUrl = `http://localhost:${port}/instagram/callback?code=${code}&state=${state}`;
+
+            fetch(callbackUrl)
+                .then(() => {
+                    document.body.innerHTML = '<h1>✓ Instagram Connected!</h1><p>You can close this window.</p>';
+                })
+                .catch(err => {
+                    document.body.innerHTML = `<h1>Error connecting</h1><p>${err.message}</p><p>Make sure the app is running on localhost:${port}</p>`;
+                });
+        } else {
+            document.body.innerHTML = '<h1>Invalid callback</h1>';
+        }
+    </script>
+</body>
+</html>
