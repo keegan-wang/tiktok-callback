@@ -2,9 +2,27 @@
 <html>
 <head>
     <title>Instagram OAuth Callback</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            max-width: 680px;
+            margin: 64px auto;
+            padding: 0 20px;
+            line-height: 1.5;
+            color: #181818;
+        }
+        a { color: #2457c5; }
+        footer {
+            margin-top: 48px;
+            font-size: 13px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
     <h1>Connecting Instagram...</h1>
+    <p>Return to the Mass Gen app after this page finishes.</p>
     <script>
         const params = new URLSearchParams(window.location.search);
         const code = params.get('code');
@@ -19,15 +37,29 @@
             const callbackUrl = `http://localhost:${port}/instagram/callback?code=${code}&state=${state}`;
 
             fetch(callbackUrl)
-                .then(() => {
-                    document.body.innerHTML = '<h1>✓ Instagram Connected!</h1><p>You can close this window.</p>';
+                .then(async response => {
+                    const data = await response.json().catch(() => ({}));
+                    if (!response.ok || data.ok === false) {
+                        const msg = data.error || `Local callback failed with HTTP ${response.status}`;
+                        document.body.innerHTML = `<h1>Error connecting</h1><p>${msg}</p><p>Return to Mass Gen and try again.</p>${footer()}`;
+                        return;
+                    }
+                    document.body.innerHTML = `<h1>Instagram Connected</h1><p>You can close this window.</p>${footer()}`;
                 })
                 .catch(err => {
-                    document.body.innerHTML = `<h1>Error connecting</h1><p>${err.message}</p><p>Make sure the app is running on localhost:${port}</p>`;
+                    document.body.innerHTML = `<h1>Error connecting</h1><p>${err.message}</p><p>Make sure the app is running on localhost:${port}</p>${footer()}`;
                 });
         } else {
-            document.body.innerHTML = '<h1>Invalid callback</h1>';
+            document.body.innerHTML = `<h1>Invalid callback</h1>${footer()}`;
+        }
+
+        function footer() {
+            return '<footer><a href="/tiktok-callback/privacy/">Privacy Policy</a> · <a href="/tiktok-callback/terms/">Terms</a></footer>';
         }
     </script>
+    <footer>
+        <a href="/tiktok-callback/privacy/">Privacy Policy</a> ·
+        <a href="/tiktok-callback/terms/">Terms</a>
+    </footer>
 </body>
 </html>
